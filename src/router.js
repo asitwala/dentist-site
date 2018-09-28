@@ -2,8 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // Home
-import Home from './views/Home/Home.vue'; 
-
+import Home from './views/Home/Home.vue';
 
 Vue.use(Router);
 

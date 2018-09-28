@@ -19,26 +19,27 @@
       </div>
 
       <div class="ds-nav-right">
-          <router-link to="/">HOME</router-link>
-          <router-link to="/about">ABOUT</router-link>
-          <router-link to="/about">SERVICES</router-link>
-          <router-link to="/about">PATIENT INFORMATION</router-link>
-          <router-link to="/about">TECHNOLOGY</router-link>
-          <router-link to="/about">CONTACT</router-link>
+        <main-header></main-header>
       </div>
-
     </div>
     <router-view/>
-
   </div>
 </template>
 
 <script>
-export default {};
+
+import MainHeader from '@/components/MainHeader.vue';
+
+export default {
+  components: {
+    'main-header': MainHeader,
+  },
+};
+
 </script>
 
 <style lang="scss">
-  @import "./styles/app";
+  @import "~@/styles/app";
 
   body {
     width: 100%;
@@ -85,12 +86,15 @@ export default {};
   }
 
   #ds-nav {
+    //background-color: rgba(17, 45, 78, 0.75);
     background-color: $darkBlue;
     min-height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    //position: absolute;
+    //z-index: 200;
   }
 
   p {
@@ -105,9 +109,7 @@ export default {};
   }
 
   .ds-nav-right {
-    margin: 12px;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
   }
 
   .ds-primary-name {
@@ -123,13 +125,5 @@ export default {};
     text-align: center;
     margin-top: -2px;
     line-height: 14px;
-  }
-
-  a {
-    color: $offWhite;
-    margin: 0 20px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 14px;
   }
 </style>
